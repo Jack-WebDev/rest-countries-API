@@ -23,6 +23,12 @@ select {
   background-color: var(--elements);
 }
 
+img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
 .theme {
   background-color: var(--backgroundColor);
 }
@@ -31,6 +37,7 @@ main {
   display: grid;
   justify-items: center;
   gap: 5rem;
+  margin-inline: 2rem;
 }
 
 h1,
@@ -91,6 +98,7 @@ button {
   background-color: whitesmoke;
   border-radius: 10px;
   background-color: var(--elements);
+  height: 100%;
 }
 
 .card__content {
@@ -106,7 +114,6 @@ button {
 @media screen and (min-width: 768px) {
   main {
     grid-template-columns: 1fr 1fr;
-    column-gap: 0;
   }
 
   .filters {

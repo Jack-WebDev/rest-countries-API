@@ -10,6 +10,8 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [theme, setTheme] = useState<Theme>("light__mode");
 
+  localStorage.setItem("theme", theme);
+
   const toggleTheme = () => {
     setTheme((prevTheme) =>
       prevTheme === "light__mode" ? "dark__mode" : "light__mode"
@@ -65,7 +67,7 @@ const Home = () => {
         {filteredData.map((country, index) => (
           <div key={index}>
             <Card
-              // imgSrc={country.flags.svg}
+              imgSrc={country.flags.svg}
               title={country.name}
               population={country.population}
               region={country.region}
