@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.light__mode {
+  --backgroundColor: hsl(0, 0%, 98%);
+  --text: hsl(200, 15%, 8%);
+  --inputText: hsl(0, 0%, 52%);
+  --elements: #fff;
+}
+
+.dark__mode {
+  --backgroundColor: hsl(207, 26%, 17%);
+  --text: #fff;
+  --elements: hsl(209, 23%, 22%);
+}
+
+header,
+input,
+select {
+  background-color: var(--elements);
+}
+
+.theme {
+  background-color: var(--backgroundColor);
+}
+
+main {
+  display: grid;
+  justify-items: center;
+  gap: 5rem;
+}
+
+h1,
+h2,
+p,
+label,
+option {
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: clamp(1.2rem, 1.5vw + 1rem, 7rem);
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.filters {
+  display: grid;
+  gap: 1rem;
+}
+
+.filters input {
+  width: 90%;
+  margin: auto;
+  border: none;
+  margin-block-start: 1rem;
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+
+.filters input::placeholder {
+  color: var(--text);
+}
+
+.filters select {
+  width: fit-content;
+  margin-inline-start: 1rem;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-block-end: 3rem;
+  color: var(--text);
+}
+
+.card__container {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  background-color: var(--elements);
+}
+
+.card__content {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+
+.card__content h2 {
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0;
+  }
+
+  .filters input {
+    width: 50%;
+    margin: unset;
+  }
+
+  .filters select {
+    margin: unset;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .filters input {
+    width: 25%;
+  }
+}
